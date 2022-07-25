@@ -19,6 +19,7 @@
 
 - yesterday <- Sys.Date() - days(1)
 - start_current_month = as.Date(paste0(substr(Sys.Date(),1,7),"-01"))
+- start_current_month - months(1) -- start previous month
 - format(date,"%d/%m/%Y")
 - format(as.Date(df$date), "%b-%Y") -- "March 1993"
 - as.Date(as.POSIXct(date_variable, tz=''))
@@ -111,3 +112,19 @@ write.xlsx(df2, file=filename, sheetName="name2", append=TRUE, row.names=FALSE)
 
 - df[9,] = c("Total", colSums(df[,2:6]), NA)
 - df[9,7] = (as.numeric(df[9,"column_name"]) - as.numeric(df[9,"column_name_2"]))/as.numeric(df[9,"column_name"] * 100 
+
+- case_when -- from most specific to more general
+
+ mutate (
+    type = case_when(
+      height > 200 | mass > 200 ~ "large",
+      species == "Droid"        ~ "robot",
+      TRUE                      ~  "other"
+    )
+    
+mutate(flag = case_when(
+        (condition1) & (condition2) ~ 1, 
+        TRUE ~ 0)
+        )
+        
+- if_else(to < from, true = from, false = to) 
