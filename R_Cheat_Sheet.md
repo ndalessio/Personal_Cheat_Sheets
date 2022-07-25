@@ -107,7 +107,7 @@ write.xlsx(df2, file=filename, sheetName="name2", append=TRUE, row.names=FALSE)
 - sprintf("SELECT *  WHERE date_variable BETWEEN  '%s' AND '%s' GROUP BY 1;", from, to)
 
 ### Others
-df[9,] = c("Total", colSums(df[,2:6]), NA) -- Adds a row with a Total per column, except the last one that leaves NA
+- df[9,] = c("Total", colSums(df[,2:6]), NA) -- Adds a row with a Total per column, except the last one that leaves NA
 
 - df[9,] = c("Total", colSums(df[,2:6]), NA)
 - df[9,7] = (as.numeric(df[9,"column_name"]) - as.numeric(df[9,"column_name_2"]))/as.numeric(df[9,"column_name"] * 100 
