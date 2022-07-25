@@ -1,39 +1,32 @@
 
 ### Basics
 
-typeof(df)
-
-subset(df, v == xxx)
-
-nrow(df)
-
-ncol(df)
-
-dim(df)
-
-table(df$v)
-
-dplyr::count(df, v, sort = TRUE) -- Value counts
-
-df %>% group_by(v) %>% summarise(n = n()) %>% mutate(Freq = n/sum(n)) -- Frequency by tidyverse
+- typeof(df)
+- subset(df, v == xxx)
+- nrow(df)
+- ncol(df)
+- dim(df)
+- table(df$v)
+- dplyr::count(df, v, sort = TRUE) -- Value counts
+- df %>% group_by(v) %>% summarise(n = n()) %>% mutate(Freq = n/sum(n)) -- Frequency by tidyverse
 
 ### Exploration
 
-quantile(df$v, na.rm = T, probs = c(0.0001, 0.001, 0.01, 0.05, 0.1, 0.15, 0.2, 0.3, 0.90, 0.95, 0.99, 0.999))
+- quantile(df$v, na.rm = T, probs = c(0.0001, 0.001, 0.01, 0.05, 0.1, 0.15, 0.2, 0.3, 0.90, 0.95, 0.99, 0.999))
 
 ### Dates 
 
-yesterday <- Sys.Date() - days(1)
-start_current_month = as.Date(paste0(substr(Sys.Date(),1,7),"-01"))
-date <- format(date,"%d/%m/%Y")
-format(as.Date(df$date), "%b-%Y") -- "March 1993"
-as.Date(as.POSIXct(date_variable, tz=''))
-week_ending = ceiling_date(date, unit='weeks')-days(1) --Week ending
+- yesterday <- Sys.Date() - days(1)
+- start_current_month = as.Date(paste0(substr(Sys.Date(),1,7),"-01"))
+- format(date,"%d/%m/%Y")
+- format(as.Date(df$date), "%b-%Y") -- "March 1993"
+- as.Date(as.POSIXct(date_variable, tz=''))
+- week_ending = ceiling_date(date, unit='weeks')-days(1) --Week ending
 
 ### Duplicates
 
-df[duplicated(df$v),] -- Find duplicates in a specific variable
-unique(df[, c("v1", "v2")]) -- Uniques combinations
+- df[duplicated(df$v),] -- Find duplicates in a specific variable
+- unique(df[, c("v1", "v2")]) -- Uniques combinations
 
 ### Missing data
 
