@@ -1,3 +1,4 @@
+# R Cheat Sheet
 
 ### Basics
 
@@ -30,79 +31,83 @@
 
 ### Missing data
 
-newdata <- na.omit(df) -- drop NA
-df[is.na(df)] <- 0 -- Replace all NA
-df$v[is.na(df$v)] <- 0 -- Replace NA in specific column
-names(which(colSums(is.na(df))>0)) -- Returns columns names qhere are NA
-df[rowSums(is.na(df)) > 0,] -- Returns rows with NA
-df[!complete.cases(df),] -- Returns rows with NA
-df[is.na(df$v),] -- Returns row but checking NA in specific columns
+- newdata <- na.omit(df) -- drop NA
+- df[is.na(df)] <- 0 -- Replace all NA
+- df$v[is.na(df$v)] <- 0 -- Replace NA in specific column
+- names(which(colSums(is.na(df))>0)) -- Returns columns names qhere are NA
+- df[rowSums(is.na(df)) > 0,] -- Returns rows with NA
+- df[!complete.cases(df),] -- Returns rows with NA
+- df[is.na(df$v),] -- Returns row but checking NA in specific columns
 
 ### Drop columns
-df <- df[, !(colnames(df) %in% c("v1","v2))] 
-df <- df[, c("foo","bar"):= NULL]
-df %>% drop_na(column)
+- df <- df[, !(colnames(df) %in% c("v1","v2))] 
+- df <- df[, c("foo","bar"):= NULL]
+- df %>% drop_na(column)
 
 ### Column names
-colnames(df)[colnames(df) == 'col_old_name'] <- 'cold_new_name'
-names(df) <-c(cold_new_name_1','cold_new_name_2') -- In this case, assuming there are only two columns
-df <- setcolorder(summary_games, c("v2", "v1", "v3")) -- data.table package
-select(v1, v2, everything()) -- re order v1, v2, andd then the rest
+- colnames(df)[colnames(df) == 'col_old_name'] <- 'cold_new_name'
+- names(df) <-c(cold_new_name_1','cold_new_name_2') -- In this case, assuming there are only two columns
+- df <- setcolorder(summary_games, c("v2", "v1", "v3")) -- data.table package
+- select(v1, v2, everything()) -- re order v1, v2, andd then the rest
 
 ### Rolling average
-mutate(V_Rolling_Avg = lag(round(zoo::rollmean(Vs, k = 2, fill = NA, align ="right"), 2), 1, default = NA)) -- lag in this case "lowers" it one row
+- mutate(V_Rolling_Avg = lag(round(zoo::rollmean(Vs, k = 2, fill = NA, align ="right"), 2), 1, default = NA)) -- lag in this case "lowers" it one row
 
 ### Dummy variables
-dummies <- dcast(df, v1 ~ v2, fun.aggregate = length) -- Reshape2 packege
+- dummies <- dcast(df, v1 ~ v2, fun.aggregate = length) -- Reshape2 packege
 
 ### Format
 
-format(as.numeric(number), big.mark=",")
+- format(as.numeric(number), big.mark=",")
 
 ### data.table
 
 https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html
 
-df = data.table(df)
-df[ ,total := sum(gross), by=.(v1,v2)]
-df[ ,big_numbers := ifelse(total >= 1000, 1, 0), by=.(v1,v2)]
-df[, .(n = .N, n_big_numbers = sum(big_numbers)), by=c("v1", "v2")] 
-df[total >= 1000, .(UnN = uniqueN(outlet_id))] -- How many outlets have sold > 1000
-unique(df[,c("v1", "v2")])
-df[total > 1000, .(number_cases = length(unique(v1, v2))), by = v3][number_cases > 0][order(-number_cases)]
+- f = data.table(df)
+- df[ ,total := sum(gross), by=.(v1,v2)]
+- df[ ,big_numbers := ifelse(total >= 1000, 1, 0), by=.(v1,v2)]
+- df[, .(n = .N, n_big_numbers = sum(big_numbers)), by=c("v1", "v2")] 
+- df[total >= 1000, .(UnN = uniqueN(outlet_id))] -- How many outlets have sold > 1000
+- unique(df[,c("v1", "v2")])
+- df[total > 1000, .(number_cases = length(unique(v1, v2))), by = v3][number_cases > 0][order(-number_cases)]
 
-df[ , (cols) := lapply(.SD, nafill, fill=0), .SDcols = cols]
+- df[ , (cols) := lapply(.SD, nafill, fill=0), .SDcols = cols]
 
 ### Completing cases
 
 Useful for time series 
 
-%>% complete(date = seq.Date(as.Date(from), as.Date(to), by="day"), fill = list(v1 = 0, v2 = 0)) -- tidyr::complete()
+- %>% complete(date = seq.Date(as.Date(from), as.Date(to), by="day"), fill = list(v1 = 0, v2 = 0)) -- tidyr::complete()
 
-all_dates = seq(min(dft$week_ending),max(df$week_ending), 7)
+- all_dates = seq(min(dft$week_ending),max(df$week_ending), 7)
+
 all = expand.grid(outlet = unique(df$outlet), week_ending=all_dates)
+
 df = all %>% left_join(df)
 
 ### Pivots
-df %>% spread(v1, v2, fill=0) -- tidyr
+- df %>% spread(v1, v2, fill=0) -- tidyr
 
 ### Merge
 
- merge(df1,df2[ ,c(1,2)],all.x=TRUE, by="v1") -- merging just some columns from df2
+- merge(df1,df2[ ,c(1,2)],all.x=TRUE, by="v1") -- merging just some columns from df2
 
 ### Excel
 
-filename = paste0("name", from, "_", to,".xlsx")
+- filename = paste0("name", from, "_", to,".xlsx")
+
 write.xlsx(df1, file=filename, sheetName="name1", row.names=FALSE)
+
 write.xlsx(df2, file=filename, sheetName="name2", append=TRUE, row.names=FALSE)
 
 ### Querying
-paste0("SELECT * FROM table WHERE date_variable BETWEEN '",from,"' AND '",to,"'")
+- paste0("SELECT * FROM table WHERE date_variable BETWEEN '",from,"' AND '",to,"'")
 
-sprintf("SELECT *  WHERE date_variable BETWEEN  '%s' AND '%s' GROUP BY 1;", from, to)
+- sprintf("SELECT *  WHERE date_variable BETWEEN  '%s' AND '%s' GROUP BY 1;", from, to)
 
 ### Others
 df[9,] = c("Total", colSums(df[,2:6]), NA) -- Adds a row with a Total per column, except the last one that leaves NA
 
-df[9,] = c("Total", colSums(df[,2:6]), NA)
-df[9,7] = (as.numeric(df[9,"column_name"]) - as.numeric(df[9,"column_name_2"]))/as.numeric(df[9,"column_name"] * 100 
+- df[9,] = c("Total", colSums(df[,2:6]), NA)
+- df[9,7] = (as.numeric(df[9,"column_name"]) - as.numeric(df[9,"column_name_2"]))/as.numeric(df[9,"column_name"] * 100 
