@@ -2,12 +2,19 @@
 ### Basics
 
 typeof(df)
+
 subset(df, v == xxx)
+
 nrow(df)
+
 ncol(df)
+
 dim(df)
+
 table(df$v)
+
 dplyr::count(df, v, sort = TRUE) -- Value counts
+
 df %>% group_by(v) %>% summarise(n = n()) %>% mutate(Freq = n/sum(n)) -- Frequency by tidyverse
 
 ### Exploration
