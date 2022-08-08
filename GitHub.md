@@ -3,9 +3,13 @@
 - Commit message in terminal to merge
 
 press "i" (i for insert)
+
 write your merge message
+
 press "esc" (escape)
+
 write ":wq" (write & quit)
+
 then press enter
 
 
