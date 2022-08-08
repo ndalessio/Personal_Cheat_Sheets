@@ -1,4 +1,4 @@
-# R Cheat Sheet
+# R #
 
 ### Basics
 
