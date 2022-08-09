@@ -39,21 +39,27 @@
 - groupby(['V1', pd.Grouper(key='date_variable', freq="W")]) -- grouping by week
 - Number of months between two dates
 
+```
 df['nb_months'] = ((df.date2 - df.date1)/np.timedelta64(1, 'M'))
-
 df['nb_months'] = df['nb_months'].astype(int)
+```
 
 ### EA
 
 - df = df[df.between(df.quantile(.05), df.quantile(.95))] -- removing outliers
 
-- 
-cols = df.columns.difference(["col_wr_dont_need_1", "col_wr_dont_need_2"]) -- removing outliers for specific cols
+- Removing outliers for specific cols
+
+cols = df.columns.difference(["col_wr_dont_need_1", "col_wr_dont_need_2"]) 
+
 df = df[~(df[cols] > df[cols].quantile(.99)).any(axis=1)]
 
-- 
-Q1 = df[cols].quantile(0.25) -- IQR
+- IQR
+
+Q1 = df[cols].quantile(0.25)
+
 Q3 = df[cols].quantile(0.75)
+
 IQR = Q3 - Q1
 
 df = df[~((df[cols] < (Q1 - 1.5 * IQR)) |(df[cols] > (Q3 + 1.5 * IQR))).any(axis=1)
