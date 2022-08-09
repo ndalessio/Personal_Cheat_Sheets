@@ -5,16 +5,13 @@
 
 - ```py -3 -m pip install -- I have found this commands useful sometimes```
 - ```conda install -c conda-forge scikit-surprise```
--```
-- pip / pipenv install teradatasql==17.10.0.3 -- installing specific version
-```
+- Installing specific versions
+```pip / pipenv install teradatasql==17.10.0.3```
 
 ### Pickle 
 
-```
-- df.to_pickle('filename.pkl') -- to save models for example
-- df = pd.read_pickle('filename.pkl ')
-```
+- ```df.to_pickle('filename.pkl') -- to save models for example```
+- ```df = pd.read_pickle('filename.pkl ') ```
 
 ### Subset
 
