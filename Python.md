@@ -136,7 +136,10 @@ https://stackoverflow.com/questions/53597236/pandas-groupby-inside-np-where
 
 - https://stackoverflow.com/questions/39741136/in-python-pandas-using-cumsum-with-groupby-and-reset-of-cumsum-when-value-is-0
 - https://stackoverflow.com/questions/61590055/pandas-cumsum-conditional-reset 
-- https://stackoverflow.com/questions/47741626/cumsum-within-group-and-reset-on-condition-in-pandas -- Groupby cumsum, reset with 1 
+- Groupby cumsum, reset with 1
+
+https://stackoverflow.com/questions/47741626/cumsum-within-group-and-reset-on-condition-in-pandas  
+
 - Cumsum reset
 
 ```
@@ -194,7 +197,7 @@ df.columns = df.columns.to_series().str.join('_')
 df = df.columns.reset_index()
 ```
 
-## Merge
+### Merge
 
 - Delete a group if condition is true
 
@@ -207,7 +210,7 @@ df = (df.merge(c, how='left', indicator=True).query('_merge == "left_only"')[df.
 
 - https://stackoverflow.com/questions/36339679/how-can-i-get-a-previous-row-from-where-the-condition-is-met-in-data-frame-in-pa
 
-### Others
+### Others ###
 
 - Exporting Jupyter notebook as PDF
 
@@ -220,7 +223,6 @@ Pyppeteer-install
 
 jupyter-nbconvert --to PDFviaHTML example.ipynb
 ```
-
 - https://stackoverflow.com/questions/51884792/pandas-insert-blank-row-for-each-group-in-pandas
 - https://chrisalbon.com/code/python/data_wrangling/pandas_make_new_columns_using_functions/ 
 
