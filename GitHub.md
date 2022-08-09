@@ -17,3 +17,8 @@ then press enter
 
 git commit --amend -m "modified commit message" (amend message)
 git push --progress origin --force (force push!)
+
+- git branch -- see local branches
+- git branch -r -- see remote branches
+- git branch -a -- see local and remote
+- git rev-parse --abbrev-ref HEAD -- to display only the name of the current branch you're on
