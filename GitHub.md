@@ -10,7 +10,7 @@ write ":wq" (write & quit)
 then press enter
 ```
 
-# Commits
+### Commits
 
 - Ammend last commit 
 
@@ -19,7 +19,7 @@ git commit --amend -m "modified commit message" (amend message)
 git push --progress origin --force (force push!)
 ```
 
-# Branches
+### Branches
 
 - ```git branch -- see local branches ```
 - ```git branch -r -- see remote branches```
