@@ -6,6 +6,7 @@
 - ```py -3 -m pip install -- I have found this commands useful sometimes```
 - ```conda install -c conda-forge scikit-surprise```
 - Installing specific versions
+
 ```pip / pipenv install teradatasql==17.10.0.3```
 
 ### Pickle 
@@ -30,8 +31,14 @@
 
 ### Inf
 
-- ```df_inf = df[(df == np.inf).any(axis=1)] -- get those rows with Inf ```
-- ```df.replace([np.inf, -np.inf], np.nan, inplace=True) \ .dropna(subset=["col1", "col2"], how="all") -- delete rows with Inf```
+- Get those rows with Inf
+
+```df_inf = df[(df == np.inf).any(axis=1)]```
+
+- Drop rows with Inf
+
+```df.replace([np.inf, -np.inf], np.nan, inplace=True) \ .dropna(subset=["col1", "col2"], how="all")```
+
 - ```len(df[df.variable.isin([np.inf])].variable2.unique()) ```
 - ```df[df.variable.isin([np.inf])]```
 
