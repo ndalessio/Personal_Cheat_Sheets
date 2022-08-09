@@ -96,13 +96,12 @@ df = all %>% left_join(df)
 
 ### Excel
 
-- ```
-filename = paste0("name", from, "_", to,".xlsx")
-write.xlsx(df1, file=filename, sheetName="name1", row.names=FALSE)
-write.xlsx(df2, file=filename, sheetName="name2", append=TRUE, row.names=FALSE)
-```
+- ```filename = paste0("name", from, "_", to,".xlsx")```
+```write.xlsx(df1, file=filename, sheetName="name1", row.names=FALSE)```
+```write.xlsx(df2, file=filename, sheetName="name2", append=TRUE, row.names=FALSE)```
 
-### Querying
+### Running queries
+
 - ```paste0("SELECT * FROM table WHERE date_variable BETWEEN '",from,"' AND '",to,"'")```
 - ```sprintf("SELECT *  WHERE date_variable BETWEEN  '%s' AND '%s' GROUP BY 1;", from, to)```
 
@@ -111,7 +110,7 @@ write.xlsx(df2, file=filename, sheetName="name2", append=TRUE, row.names=FALSE)
 - ```df[9,] = c("Total", colSums(df[,2:6]), NA)```
 - ```df[9,7] = (as.numeric(df[9,"column_name"]) - as.numeric(df[9,"column_name_2"]))/as.numeric(df[9,"column_name"] * 100 ```
 
-- case_when -- from most specific to more general
+- case_when (should go from the most specific to more general)
 
 ```
  mutate (
