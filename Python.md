@@ -15,26 +15,25 @@
 
 ### Subset
 
-```
-df.query("v1 < 0")
-```
+- ```df.query("v1 < 0")```
+- Find those rows that are not in another dataframe
+```df1[~df1.isin(df2)].dropna()```
 
 ### Na
 
-- df = pd.concat([i.append({"v1": np.nan}, ignore_index=True) for _, i in s])
+- ```df = pd.concat([i.append({"v1": np.nan}, ignore_index=True) for _, i in s])```
 
 ### Duplicates
 
-- df[df.duplicated(["v1", "v2", "v3"])]
-- df[df.v1.duplicated(keep=False)].sort_values(by="v1") 
+- ```df[df.duplicated(["v1", "v2", "v3"])]```
+- ```df[df.v1.duplicated(keep=False)].sort_values(by="v1")```
 
 ### Inf
 
-- df1[~df1.isin(df2)].dropna() -- to see what rows are not in a second df 
-- df_inf = df[(df == np.inf).any(axis=1)] -- get those rows with Inf 
-- df.replace([np.inf, -np.inf], np.nan, inplace=True) \ .dropna(subset=["col1", "col2"], how="all") -- delete rows with Inf
-- len(df[df.variable.isin([np.inf])].variable2.unique()) 
-- df[df.variable.isin([np.inf])]
+- ```df_inf = df[(df == np.inf).any(axis=1)] -- get those rows with Inf ```
+- ```df.replace([np.inf, -np.inf], np.nan, inplace=True) \ .dropna(subset=["col1", "col2"], how="all") -- delete rows with Inf```
+- ```len(df[df.variable.isin([np.inf])].variable2.unique()) ```
+- ```df[df.variable.isin([np.inf])]```
 
 ## Data transformation
 
