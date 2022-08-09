@@ -1,11 +1,11 @@
 # Python #
 
 ### Installing packages
-
+```
 - py -3 -m pip install -- I have found this commands useful sometimes
 - conda install -c conda-forge scikit-surprise
 - pip / pipenv install teradatasql==17.10.0.3 -- installing specific version
-
+```
 ### Pickle 
 
 - df.to_pickle('filename.pkl') -- to save models for example
