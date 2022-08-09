@@ -43,22 +43,7 @@
 - ```len(df[df.variable.isin([np.inf])].variable2.unique()) ```
 - ```df[df.variable.isin([np.inf])]```
 
-## Data transformation
-
-### Dates
-
-- Grouping by week
-
-```groupby(['V1', pd.Grouper(key='date_variable', freq="W")])```
-
-- Number of months between two dates
-
-```
-df['nb_months'] = ((df.date2 - df.date1)/np.timedelta64(1, 'M'))
-df['nb_months'] = df['nb_months'].astype(int)
-```
-
-### EA
+### Outliers
 
 - Removing outliers
 
@@ -78,6 +63,21 @@ Q1 = df[cols].quantile(0.25)
 Q3 = df[cols].quantile(0.75)
 IQR = Q3 - Q1
 df = df[~((df[cols] < (Q1 - 1.5 * IQR)) |(df[cols] > (Q3 + 1.5 * IQR))).any(axis=1)
+```
+
+## Data transformation
+
+### Dates
+
+- Grouping by week
+
+```groupby(['V1', pd.Grouper(key='date_variable', freq="W")])```
+
+- Number of months between two dates
+
+```
+df['nb_months'] = ((df.date2 - df.date1)/np.timedelta64(1, 'M'))
+df['nb_months'] = df['nb_months'].astype(int)
 ```
 
 ### Random
