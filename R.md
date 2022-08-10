@@ -23,6 +23,7 @@
 - ```format(date,"%d/%m/%Y")```
 - ```format(as.Date(df$date), "%b-%Y") -- "March 1993"```
 - ```as.Date(as.POSIXct(date_variable, tz=''))```
+- df$date_variable = as.POSIXct(paste(date_variable,'00:00:01'),tz='')
 - ```week_ending = ceiling_date(date, unit='weeks')-days(1) --Week ending```
 - ```as.numeric(difftime(as.Date(df$date1), as.Date(df$date2), units='mins')) -- Difference in minutes between 2 timestamps```
 
@@ -107,7 +108,17 @@ df = all %>% left_join(df)
 - ```paste0("SELECT * FROM table WHERE date_variable BETWEEN '",from,"' AND '",to,"'")```
 - ```sprintf("SELECT *  WHERE date_variable BETWEEN  '%s' AND '%s' GROUP BY 1;", from, to)```
 
-### Other
+### Patterns
+
+- ```grepl(pattern, x, ignore.case = FALSE, perl = FALSE,fixed = FALSE, useBytes = FALSE)-- returns TRUE or FALSE```
+```as.data.frame(df[grepl("some_repetitive_text",df$column),]) -- keeps rows from column that has the repetitive text``` 
+```df$column = gsub("A lot of text to remove = ","",df$column) -- removes a lot of text and then leaves the rest```
+
+- Substract
+```substr(df$column,1,20) -- keeps spaces to 1 to 20```
+
+
+### Others
 
 - ```df[9,] = c("Total", colSums(df[,2:6]), NA) -- Adds a row with a Total per column, except the last one that leaves NA```
 - ```df[9,] = c("Total", colSums(df[,2:6]), NA)```
