@@ -23,7 +23,7 @@
 - ```format(date,"%d/%m/%Y")```
 - ```format(as.Date(df$date), "%b-%Y") -- "March 1993"```
 - ```as.Date(as.POSIXct(date_variable, tz=''))```
-- df$date_variable = as.POSIXct(paste(date_variable,'00:00:01'),tz='')
+- ```df$date_variable = as.POSIXct(paste(date_variable,'00:00:01'),tz='')```
 - ```week_ending = ceiling_date(date, unit='weeks')-days(1) --Week ending```
 - ```as.numeric(difftime(as.Date(df$date1), as.Date(df$date2), units='mins')) -- Difference in minutes between 2 timestamps```
 
