@@ -120,6 +120,10 @@ df = all %>% left_join(df)
 
 ### Others
 
+- Terminate R session
+
+https://stat.ethz.ch/R-manual/R-devel/library/base/html/quit.html
+```q(save = "no", status = 0, runLast = TRUE)```
 - ```df[9,] = c("Total", colSums(df[,2:6]), NA) -- Adds a row with a Total per column, except the last one that leaves NA```
 - ```df[9,] = c("Total", colSums(df[,2:6]), NA)```
 - ```df[9,7] = (as.numeric(df[9,"column_name"]) - as.numeric(df[9,"column_name_2"]))/as.numeric(df[9,"column_name"] * 100 ```
