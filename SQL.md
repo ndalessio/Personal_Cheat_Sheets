@@ -9,7 +9,7 @@
 ```SELECT DATE_SUB("2022-06-15", INTERVAL 10 DAY);```
 
 - Crreating variables with coalesce
-- 
+
 ```COALESCE(CASE WHEN variable LIKE 'finish_with%' THEN 1 end ,0) AS new_variable```
 
 ### DbConn
