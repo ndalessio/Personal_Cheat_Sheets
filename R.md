@@ -29,11 +29,13 @@
 - ```previous_saturday <- floor_date(Sys.Date(), "week") - days(1) -- lubridate``` 
 
 - The data in the R data frame is with the timezone CEST. When writing to excel, excel automatically changes the timezone to GMT which causes the time shift in excel. One workaround is by changing the timezone in R to GMT without changing the time data, by using force_tz.
-```df$date = as.POSIXct(strptime(df$date, "%Y-%M-%d %H:%M:%S"))
+```
+df$date = as.POSIXct(strptime(df$date, "%Y-%M-%d %H:%M:%S"))
 
 Sys.setenv(TZ="")    
 
-df$date = force_tz(df$date,tzone="GMT") -- Now can be saved in excel-- ```
+df$date = force_tz(df$date,tzone="GMT") -- Now can be saved in excel
+```
 
 ### Duplicates
 
