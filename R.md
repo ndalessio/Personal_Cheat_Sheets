@@ -33,9 +33,7 @@
 
 Sys.setenv(TZ="")    
 
-df$date = force_tz(df$date,tzone="GMT")
-
-Now can be saved in excel- ```
+df$date = force_tz(df$date,tzone="GMT") -- Now can be saved in excel-- ```
 
 ### Duplicates
 
