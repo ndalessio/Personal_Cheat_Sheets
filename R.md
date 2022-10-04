@@ -62,8 +62,7 @@ df$date = force_tz(df$date,tzone="GMT") -- Now can be saved in excel
 - ```names(df) <-c(cold_new_name_1','cold_new_name_2') -- In this case, assuming there are only two columns```
 - ```df <- setcolorder(summary_games, c("v2", "v1", "v3")) -- data.table package```
 - ```select(v1, v2, everything()) -- re order v1, v2, andd then the rest```
-- ```
-lookup <- c(New_Column_Name_1="Old_Column_Name_1", New_Column_Name_2="Old_Column_Name_2")
+- ```lookup <- c(New_Column_Name_1="Old_Column_Name_1", New_Column_Name_2="Old_Column_Name_2")
 
 df %>% rename(any_of(lookup)) ```
 
