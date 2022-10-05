@@ -2,7 +2,7 @@
 
 # Queries
 
-- Dividing the query into chuncks for large datasets. The rbinding it
+- Dividing the query into chuncks for large datasets. Then rbinding it
 
 ```
 x1 = map(query, fn_to_get_data) %>%
