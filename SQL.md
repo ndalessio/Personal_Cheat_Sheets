@@ -18,6 +18,11 @@
 
 ```COALESCE(CASE WHEN variable LIKE 'finish_with%' THEN 1 end ,0) AS new_variable```
 
+- Force index
+
+```
+  SELECT column1, column2 FROM table FORCE_INDEX(column1);
+```
 
 ### DbConn
 
