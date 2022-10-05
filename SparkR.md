@@ -35,7 +35,8 @@ df %>%
   
  ```
 df %>%
-SparkR::withColumn("newColumnName",SparkR::concat_ws('-',SparkR::cast(.$column,"bigint"),SparkR::cast(.$column,"string"),SparkR::cast(.$column,"int")))
+SparkR::withColumn("newColumnName",SparkR::concat_ws('-',
+     SparkR::cast(.$column1,"bigint"),SparkR::cast(.$column2,"string"),SparkR::cast(.$column3,"int")))
 
 -- In this case, we casted the variables because the doubles were returning .0 decimal 
  ```
