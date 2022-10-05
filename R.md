@@ -69,6 +69,15 @@ lookup <- c(New_Column_Name_1="Old_Column_Name_1", New_Column_Name_2="Old_Column
 df %>% rename(any_of(lookup)) 
 ```
 
+### Columns
+
+- All columns but some
+
+```
+cols = names(df)
+cols = cols[!(cols %in% c("column1"))]
+```
+
 ### Rolling average
 - ```mutate(V_Rolling_Avg = lag(round(zoo::rollmean(Vs, k = 2, fill = NA, align ="right"), 2), 1, default = NA)) -- lag in this case "lowers" it one row```
 
