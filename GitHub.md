@@ -1,4 +1,4 @@
-# GitHub #
+# Console #
 
 - Login to a server
 
