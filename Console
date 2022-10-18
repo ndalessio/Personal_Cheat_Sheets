@@ -1,0 +1,10 @@
+# Console #
+
+```
+This is a .bat file
+
+@echo off
+PATH C:\Program Files\R\R-4.0.3\bin
+R CMD BATCH c:\Some\Folders\script.R
+
+```
