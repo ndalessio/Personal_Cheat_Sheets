@@ -113,6 +113,7 @@ all = expand.grid(outlet = unique(df$outlet), week_ending=all_dates)
 df = all %>% left_join(df)
 ```
 
+
 ### Pivots
 - ```df %>% spread(v1, v2, fill=0) -- tidyr```
 
