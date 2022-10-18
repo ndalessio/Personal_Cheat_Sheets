@@ -29,3 +29,7 @@ git push --progress origin --force (force push!)
 - ```git branch -r -- see remote branches```
 - ```git branch -a -- see local and remote```
 - ```git rev-parse --abbrev-ref HEAD -- to display only the name of the current branch you're on ```
+
+- Delete remote branch
+
+``` git push origin --delete [branch] ```
