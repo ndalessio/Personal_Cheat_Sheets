@@ -176,8 +176,11 @@ if_else(to < from, true = from, false = to)
 
 ###
 
+```
 In a script task_update.bat
 
 @echo off
 PATH C:\Program Files\R\R-4.0.3\bin
 R CMD BATCH C:\Documents\folder\script.R
+
+```
