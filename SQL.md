@@ -20,11 +20,11 @@
 
 ```date_format(date_variable,'yyyy-MM')```
 
-- https://www.mysqltutorial.org/mysql-date/#:~:text=MySQL%20uses%20yyyy%2Dmm%2Ddd,date%20the%20way%20you%20want.
-
 - Current month
 
-- ``` (select concat_ws('-',year(current_date()),month(current_date()), '01')) ```
+``` (select concat_ws('-',year(current_date()),month(current_date()), '01')) ```
+
+- https://www.mysqltutorial.org/mysql-date/#:~:text=MySQL%20uses%20yyyy%2Dmm%2Ddd,date%20the%20way%20you%20want.
 
 
 ## Others
