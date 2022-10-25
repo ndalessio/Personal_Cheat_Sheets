@@ -1,8 +1,14 @@
 # SQL #
 
+## Date thinghys
+
 - Yesterday
 
 ```SELECT column_date FROM table WHERE column_date = CURRENT_DATE() -1```
+
+- Week ending (saturday)
+
+``` to_date(column_datetime) + 5 - WEEKDAY(to_date(column_datetime)) as Week_Ending
 
 - Substract 10 days
 
@@ -12,7 +18,22 @@
 
 ```DATE_FORMAT(date_variable, '%Y-%m')```
 
+```date_format(date_variable,'yyyy-MM')```
+
 - https://www.mysqltutorial.org/mysql-date/#:~:text=MySQL%20uses%20yyyy%2Dmm%2Ddd,date%20the%20way%20you%20want.
+
+- Current month
+
+- ``` (select concat_ws('-',year(current_date()),month(current_date()), '01')) ```
+
+
+## Others
+
+- Desviation
+
+``` variable - LAG(variable) OVER(ORDER BY t1.some_variable) ```
+
+``` ((variable - LAG(variable) OVER(ORDER BY t1.some_variable)) / LAG(variable) OVER(ORDER BY t1.some_variable)) * 100 as Variance_On_Previous_month ```
 
 - Creating variables with coalesce
 
