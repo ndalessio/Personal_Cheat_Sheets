@@ -53,7 +53,7 @@ Right way:
 SUM(IF(column1=0  and column2=0 and column3 COLLATE utf8_unicode_ci NOT IN ('A','B'),1,0)) column_count,
 
 -- Also 'COLLATE utf8_unicode_ci variable', in this case I had to change it in column3
-
+```
 
 
 ### DbConn
