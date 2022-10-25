@@ -8,7 +8,7 @@
 
 - Week ending (saturday)
 
-``` to_date(column_datetime) + 5 - WEEKDAY(to_date(column_datetime)) as Week_Ending
+```to_date(column_datetime) + 5 - WEEKDAY(to_date(column_datetime)) as Week_Ending```
 
 - Substract 10 days
 
