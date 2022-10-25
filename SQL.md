@@ -12,11 +12,11 @@
 
 - Substract 10 days
 
-```SELECT DATE_SUB("2022-06-15", INTERVAL 10 DAY);```
+```select date_sub("2022-06-15", interval 10 day);```
 
 - Date format
 
-```DATE_FORMAT(date_variable, '%Y-%m')```
+```date_format(date_variable, '%Y-%m')```
 
 ```date_format(date_variable,'yyyy-MM')```
 
