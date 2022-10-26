@@ -29,7 +29,7 @@
 
 ## Others
 
-- Desviation
+- Deviation
 
 ``` variable - LAG(variable) OVER(ORDER BY t1.some_variable) ```
 
