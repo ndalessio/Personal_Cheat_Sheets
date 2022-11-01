@@ -1,9 +1,5 @@
 # Github #
 
-- Login to a server
-
-```ssh your_user@server_ip_address```
-
 - Commit message in terminal to merge
 
 ```
