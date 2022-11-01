@@ -1,5 +1,9 @@
 # Console #
 
+- Login to a server
+
+```ssh your_user@server_ip_address```
+
 ```
 This is a .bat file
 
