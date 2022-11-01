@@ -29,3 +29,11 @@ git push --progress origin --force (force push!)
 - Delete remote branch
 
 ``` git push origin --delete [branch] ```
+
+# Change remote path
+
+```
+git remote -v 
+
+git remote set-url origin git@github.com:Career-Karma-Tutorials/git-submodule.git (new)
+```
